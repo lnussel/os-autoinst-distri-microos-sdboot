@@ -14,6 +14,11 @@ sub run {
     # press enter to boot right away
     send_key 'ret';
 
+    if (get_var('FIRST_BOOT_CONFIG', '') eq 'combustion') {
+	    assert_screen 'welcome', 120;
+	    return 0;
+    }
+
     # wait for the desktop to appear
     assert_screen 'prompt-abort-disk-encryption', 60;
 

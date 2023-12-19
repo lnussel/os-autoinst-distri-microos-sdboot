@@ -1,9 +1,20 @@
 #!/bin/bash -e
+# HDD_2=combustiononly.qcow2 FIRST_BOOT_CONFIG=combustion
 hdd="$1"
 shift
+case "$hdd" in
+	*MicroOS*) DISTRI=microos ;;
+	*Tumbleweed*) DISTRI=tumbleweed ;;
+	*) echo "unknown distri"; exit 1 ;;
+esac
 CASEDIR="$PWD"
 rm -rf autoinst
 mkdir autoinst
 cp "$hdd" autoinst
+if [ -n "$HDD_2" ]; then
+	cp "$HDD_2" autoinst
+	HDD_2="${HDD_2##*/}"
+	set -- NUMDISKS=2 "HDD_2=$HDD_2" "$@"
+fi
 cd autoinst
-isotovideo CASEDIR="$CASEDIR" HDD_1="${hdd##*/}" UEFI=1 ARCH=x86_64 "$@"
+isotovideo CASEDIR="$CASEDIR" DISTRI="$DISTRI" HDD_1="${hdd##*/}" UEFI=1 ARCH="$(uname -m)" "$@"
