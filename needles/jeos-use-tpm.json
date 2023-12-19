@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 40,
+            "type": "match",
+            "width": 135,
+            "xpos": 395,
+            "ypos": 330
+        }
+    ],
+    "tags": [
+        "jeos-use-tpm"
+    ]
+}

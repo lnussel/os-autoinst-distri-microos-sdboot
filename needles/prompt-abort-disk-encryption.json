@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 15,
+            "type": "match",
+            "width": 247,
+            "xpos": 0,
+            "ypos": 448
+        }
+    ],
+    "tags": [
+        "prompt-abort-disk-encryption"
+    ]
+}

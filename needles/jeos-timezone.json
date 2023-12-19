@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 20,
+            "type": "match",
+            "width": 145,
+            "xpos": 340,
+            "ypos": 45
+        }
+    ],
+    "tags": [
+        "jeos-timezone"
+    ]
+}

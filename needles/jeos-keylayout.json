@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 20,
+            "type": "match",
+            "width": 100,
+            "xpos": 315,
+            "ypos": 45
+        }
+    ],
+    "tags": [
+        "jeos-keylayout"
+    ]
+}
