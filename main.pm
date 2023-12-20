@@ -6,5 +6,6 @@ use testapi;
 use autotest;
 
 autotest::loadtest 'tests/boot.pm';
+autotest::loadtest 'tests/reboot.pm';
 
 1;

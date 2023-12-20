@@ -59,22 +59,10 @@ sub run {
     }
 
     assert_screen 'welcome', 60;
+}
 
-    type_string 'root';
-    send_key 'ret';
-
-    type_string "$password\n";
-
-    type_string "reboot\n";
-
-    assert_screen 'bootloader-sdboot';
-
-    if (!get_var('QEMUTPM') && !get_var('PLAINTEXT')) {
-	    assert_screen 'enter-unlock-password', 60;
-	    type_string "$password\n";
-    }
-
-    assert_screen 'welcome', 60;
+sub test_flags {
+    return {fatal => 1};
 }
 
 1;
