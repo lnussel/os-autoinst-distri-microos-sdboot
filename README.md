@@ -13,3 +13,10 @@ If test fails:
 
     $ cp autoinst/testresults/some-screenshot.png needles/expected-screen.png
     $ python3 /usr/lib/os-autoinst/crop.py --tag=expected-tag needles/expected-screen.json
+
+
+Settings:
+
+    * QEMUPM=1 - set to enable tpm support
+    * PLAINTEXT=1 - set to stop auto encryption
+    * FIRST_BOOT_CONFIG=combustion - use combustion. Must also pass eg HDD_2
