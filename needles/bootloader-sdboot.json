@@ -1,11 +1,11 @@
 {
     "area": [
         {
-            "height": 80,
+            "height": 35,
             "type": "match",
             "width": 180,
-            "xpos": 360,
-            "ypos": 345
+            "xpos": 390,
+            "ypos": 375
         }
     ],
     "tags": [
