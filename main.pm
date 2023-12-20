@@ -5,6 +5,8 @@ use strict;
 use testapi;
 use autotest;
 
+$testapi::password = "nots3cr3t";
+
 autotest::loadtest 'tests/boot.pm';
 autotest::loadtest 'tests/reboot.pm';
 

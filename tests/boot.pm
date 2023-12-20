@@ -5,8 +5,6 @@ use base 'basetest';
 use strict;
 use testapi;
 
-my $password = "abc";
-
 sub run {
     # wait for bootloader to appear
     assert_screen 'bootloader-sdboot';
@@ -15,7 +13,7 @@ sub run {
     send_key 'ret';
 
     if (get_var('FIRST_BOOT_CONFIG', '') eq 'combustion') {
-	    assert_screen 'welcome', 120;
+	    assert_screen 'welcome', 300;
 	    return 0;
     }
 
@@ -41,11 +39,11 @@ sub run {
     send_key 'ret';
 
     assert_screen 'jeos-root-password', 30;
-    type_string $password;
+    type_password;
     send_key 'ret';
 
     assert_screen 'jeos-confirm-root-password', 30;
-    type_string $password;
+    type_password;
     send_key 'ret';
 
     if (!get_var('PLAINTEXT')) {
@@ -58,7 +56,7 @@ sub run {
 	    send_key 'ret';
     }
 
-    assert_screen 'welcome', 60;
+    assert_screen 'welcome', 30;
 }
 
 sub test_flags {
