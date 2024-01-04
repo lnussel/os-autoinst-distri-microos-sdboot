@@ -68,6 +68,9 @@ sub run {
     if (get_var('QEMUTPM')) {
 	    assert_screen 'jeos-use-tpm', 30;
 	    send_key 'ret';
+    } elsif (get_var('FIDO2')) {
+	    assert_screen 'jeos-use-fido2', 30;
+	    send_key 'ret';
     }
 
     assert_screen 'welcome', 30;
