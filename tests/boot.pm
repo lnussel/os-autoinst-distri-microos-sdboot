@@ -48,6 +48,20 @@ sub run {
 
     if (!get_var('PLAINTEXT')) {
 	    assert_screen 'jeos-encryption-password', 30;
+
+	    my $pw = get_var('CRYPT_PASSWORD');
+	    if ($pw) {
+		send_key 'right';
+		send_key 'ret';
+
+		assert_screen 'jeos-enter-encryption-password', 30;
+		type_password $pw;
+		send_key 'ret';
+
+		assert_screen 'jeos-enter-encryption-password', 30;
+		type_password $pw;
+		send_key 'ret';
+	    }
 	    send_key 'ret';
     }
 
