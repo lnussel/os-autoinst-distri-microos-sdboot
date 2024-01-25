@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 100,
+            "type": "match",
+            "width": 243,
+            "xpos": 380,
+            "ypos": 320
+        }
+    ],
+    "tags": [
+        "jeos-use-fido2"
+    ]
+}
