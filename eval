@@ -1,0 +1,14 @@
+#!/bin/bash
+while read -r name; do
+	fn="autoinst/testresults/result-$name.json"
+	result=unknown
+	[ -e "$fn" ] && result="$(jq -r '.result' < "$fn")"
+	echo "$name: $result"
+	if [ "$result" = 'fail' ]; then
+		jq -r '.details[0:-2][]|["--", .screenshot, .needle, .result]|join("|")' < "$fn"
+		read -r result1 text title < <(jq -r '.details[-1]|join(" ")' < "$fn")
+		echo ">> $result1 $text $title"
+		rt="autoinst/testresults/$text"
+		[ -e "$rt" ] && cat "$rt"
+	fi
+done < <(jq -r '.[]|.name' < autoinst/testresults/test_order.json)

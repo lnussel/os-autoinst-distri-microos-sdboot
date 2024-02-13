@@ -1,0 +1,4 @@
+#!/bin/bash
+: "${prj:=devel:microos:systemd-boot}"
+osc getbinaries "$prj"/openSUSE-MicroOS:kvm-and-xen-sdboot images x86_64
+osc getbinaries "$prj"/kiwi-templates-Minimal:kvm-and-xen-sdboot images x86_64
