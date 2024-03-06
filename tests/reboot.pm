@@ -30,7 +30,7 @@ sub run {
 
     assert_screen 'bootloader-sdboot';
 
-    if (!get_var('QEMUTPM') && !get_var('PLAINTEXT')) {
+    if (!get_var('QEMUTPM') && !get_var('PLAINTEXT') && !get_var('FIDO2')) {
 	    assert_screen 'enter-unlock-password', 60;
 	    type_password(get_var('CRYPT_PASSWORD'));
 	    send_key 'ret';
