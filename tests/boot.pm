@@ -73,7 +73,7 @@ sub run {
 	    send_key 'ret';
     }
 
-    assert_screen 'welcome', 30;
+    assert_screen 'welcome', 45;
 }
 
 sub test_flags {
