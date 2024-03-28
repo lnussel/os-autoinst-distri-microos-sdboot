@@ -1,13 +1,30 @@
 products:
-  example:
-    distri: "example"
-    flavor: "DVD"
+  microos:
+    distri: "microos"
+    flavor: "kvm-and-xen-sdboot"
+    arch: "x86_64"
+    version: '0'
+  tumbleweed:
+    distri: "tumbleweed"
+    flavor: "kvm-and-xen-sdboot"
     arch: "x86_64"
     version: '0'
 machines:
   64bit:
     backend: "qemu"
+    settings:
+      SMP: "2"
+  64bit-tpm:
+    backend: "qemu"
+    settings:
+      SMP: "2"
+      QEMUTPM: "1"
 job_templates:
-  simple_boot:
-    product: "example"
+  plaintext:
+    product: "microos"
     machine: "64bit"
+    settings:
+      PLAINTEXT: "1"
+  tpm:
+    product: "microos"
+    machine: "64bit-tpm"

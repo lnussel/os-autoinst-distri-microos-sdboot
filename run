@@ -8,11 +8,16 @@ case "$hdd" in
 	*) echo "unknown distri"; exit 1 ;;
 esac
 CASEDIR="$PWD"
-rm -rf autoinst
-mkdir autoinst
-cp "$hdd" autoinst
+for i in "$@"; do
+	[ "${i#SKIPTO=}" != "$i" ] || SKIPTO="${i#SKIPTO=}"
+done
+if [ -z "$SKIPTO" ]; then
+	rm -rf autoinst
+	mkdir autoinst
+	cp "$hdd" autoinst
+fi
 if [ -n "$HDD_2" ]; then
-	cp "$HDD_2" autoinst
+	[ -z "$SKIPTO" ] || cp "$HDD_2" autoinst
 	HDD_2="${HDD_2##*/}"
 	set -- NUMDISKS=2 "HDD_2=$HDD_2" "$@"
 fi
