@@ -1,30 +1,63 @@
 products:
   microos:
-    distri: "microos"
+    distri: "opensuse-microos"
     flavor: "kvm-and-xen-sdboot"
     arch: "x86_64"
-    version: '0'
+    version: '*'
   tumbleweed:
-    distri: "tumbleweed"
+    distri: "opensuse-tumbleweed-minimal-vm"
     flavor: "kvm-and-xen-sdboot"
     arch: "x86_64"
-    version: '0'
+    version: '*'
 machines:
   64bit:
     backend: "qemu"
     settings:
       SMP: "2"
+      UEFI: "1"
   64bit-tpm:
     backend: "qemu"
     settings:
       SMP: "2"
       QEMUTPM: "1"
+      UEFI: "1"
+  64bit-fido2:
+    backend: "qemu"
+    settings:
+      SMP: "2"
+      FIDO2: "1"
+      UEFI: "1"
 job_templates:
   plaintext:
     product: "microos"
     machine: "64bit"
     settings:
       PLAINTEXT: "1"
+  fido2:
+    product: "microos"
+    machine: "64bit-fido2"
   tpm:
     product: "microos"
     machine: "64bit-tpm"
+  tpm-pin:
+    product: "microos"
+    machine: "64bit-tpm"
+    settings:
+      TPM_PIN: "12345"
+
+  tw-plaintext:
+    product: "tumbleweed"
+    machine: "64bit"
+    settings:
+      PLAINTEXT: "1"
+  tw-fido2:
+    product: "tumbleweed"
+    machine: "64bit-fido2"
+  tw-tpm:
+    product: "tumbleweed"
+    machine: "64bit-tpm"
+  tw-tpm-pin:
+    product: "tumbleweed"
+    machine: "64bit-tpm"
+    settings:
+      TPM_PIN: "12345"
