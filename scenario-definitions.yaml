@@ -33,6 +33,14 @@ job_templates:
     machine: "64bit"
     settings:
       PLAINTEXT: "1"
+  rootpw:
+    product: "microos"
+    machine: "64bit"
+  cryptpw:
+    product: "microos"
+    machine: "64bit"
+    settings:
+      CRYPT_PASSWORD: "abcdef"
   fido2:
     product: "microos"
     machine: "64bit-fido2"
@@ -50,6 +58,14 @@ job_templates:
     machine: "64bit"
     settings:
       PLAINTEXT: "1"
+  tw-rootpw:
+    product: "microos"
+    machine: "64bit"
+  tw-cryptpw:
+    product: "microos"
+    machine: "64bit"
+    settings:
+      CRYPT_PASSWORD: "abcdef"
   tw-fido2:
     product: "tumbleweed"
     machine: "64bit-fido2"

@@ -45,6 +45,9 @@ sub run {
 		assert_screen 'jeos-enter-encryption-password', 30;
 		type_password $pw;
 		send_key 'ret';
+	    } else {
+		# enroll root password
+		send_key 'ret';
 	    }
 
 	    my $pin = get_var('TPM_PIN');
