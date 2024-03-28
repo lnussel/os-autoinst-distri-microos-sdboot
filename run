@@ -9,7 +9,7 @@ case "$hdd" in
 esac
 CASEDIR="$PWD"
 for i in "$@"; do
-	[ "${i#SKIPTO=}" != "$i" ] || SKIPTO="${i#SKIPTO=}"
+	[ "${i#SKIPTO=}" = "$i" ] || SKIPTO="${i#SKIPTO=}"
 done
 if [ -z "$SKIPTO" ]; then
 	rm -rf autoinst

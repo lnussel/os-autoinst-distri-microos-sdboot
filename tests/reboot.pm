@@ -30,10 +30,23 @@ sub run {
 
     assert_screen 'bootloader-sdboot';
 
-    if (!get_var('QEMUTPM') && !get_var('PLAINTEXT') && !get_var('FIDO2')) {
-	    assert_screen 'enter-unlock-password', 60;
-	    type_password(get_var('CRYPT_PASSWORD'));
-	    send_key 'ret';
+    if (!get_var('PLAINTEXT')) {
+	    if (get_var('QEMUTPM')) {
+		    my $pin = get_var('TPM_PIN');
+		    if ($pin) {
+			    assert_screen 'reboot-enter-tpm2-pin', 30;
+			    type_password($pin);
+			    send_key 'ret';
+		    }
+	    } elsif (get_var('FIDO2')) {
+		    # well, in theory it should be required to touch
+		    # the fido but the qemu emulation does not
+		    # support that
+	    } else {
+		    assert_screen 'enter-unlock-password', 60;
+		    type_password(get_var('CRYPT_PASSWORD'));
+		    send_key 'ret';
+	    }
     }
 
     assert_screen 'welcome', 60;
