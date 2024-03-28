@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 15,
+            "type": "match",
+            "width": 190,
+            "xpos": 0,
+            "ypos": 320
+        }
+    ],
+    "tags": [
+        "tpm-token-enrolled"
+    ]
+}

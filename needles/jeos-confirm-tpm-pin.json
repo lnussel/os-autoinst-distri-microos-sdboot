@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 70,
+            "type": "match",
+            "width": 100,
+            "xpos": 395,
+            "ypos": 315
+        }
+    ],
+    "tags": [
+        "jeos-confirm-tpm-pin"
+    ]
+}

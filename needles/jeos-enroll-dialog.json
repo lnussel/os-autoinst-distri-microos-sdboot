@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 40,
+            "type": "match",
+            "width": 175,
+            "xpos": 365,
+            "ypos": 340
+        }
+    ],
+    "tags": [
+        "jeos-enroll-dialog"
+    ]
+}

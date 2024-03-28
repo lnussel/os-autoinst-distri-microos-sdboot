@@ -1,0 +1,14 @@
+{
+    "area": [
+        {
+            "height": 13,
+            "type": "match",
+            "width": 220,
+            "xpos": 3,
+            "ypos": 752
+        }
+    ],
+    "tags": [
+        "reboot-enter-tpm2-pin"
+    ]
+}
